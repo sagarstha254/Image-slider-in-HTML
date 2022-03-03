@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Mero slide.</title>
+    <style>
+        .slider {
+            width: 90%;
+            height: 500px;
+            margin: 20px auto;
+            box-sizing: border-box;
+            overflow: hidden;
+            box-shadow: 5px 5px 10px gray;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+
+        <div id="img">
+            <img src="a.jpg">
+        </div>
+    </div>
+
+    <script>
+        var images = ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg","f.jpg"];
+
+        var x = 0;
+
+        var imgs = document.getElementById("img");
+
+        setInterval(slider, 2000);
+
+        function slider() {
+            if (x < images.length) {
+                x = x + 1;
+            }
+            else {
+                x = 1;
+            }
+            img.innerHTML = "<img src=" + images[x - 1] + ">";
+           // console.log(img.innerHTML);
+        }
+    </script>
+</body>
+
+</html>
